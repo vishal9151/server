@@ -16,7 +16,7 @@ export const placeOrder = asyncError(async (req, res, next) => {
     totalAmount,
   } = req.body;
 
-  const user = "req.user._id";
+  const user = req.user._id;
 
   const orderOptions = {
     shippingInfo,

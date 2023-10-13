@@ -26,6 +26,7 @@ export const connectPassport = () => {
 
           return done(null, newUser);
         } else {
+          console.log(user);
           return done(null, user);
         }
       }
@@ -33,10 +34,13 @@ export const connectPassport = () => {
   );
 
   passport.serializeUser((user, done) => {
+    console.log(user.id);
     done(null, user.id);
   });
 
   passport.deserializeUser(async (id, done) => {
+
+    console.log(id);
     const user = await User.findById(id);
     console.log(user);
     done(null, user);
