@@ -49,8 +49,8 @@ import orderRoute from "./routes/orders.js";
 // Initialize Passport and configure it
 connectPassport();
 
-app.use("/api/v1/user", userRoute); // Use a more specific route path
-app.use("/api/v1/orders", orderRoute); // Use a more specific route path
+app.use("/api/v1/", userRoute); // Use a more specific route path
+app.use("/api/v1/", orderRoute); // Use a more specific route path
 
 app.use(errorMiddleware);
 
