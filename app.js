@@ -16,19 +16,16 @@ dotenv.config({
 });
 
 // Using middlewares
-
-app.use(
-  session({
-    secret: process.env.SECRET_Id,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      // secure: process.env.NODE_ENV === "development" ? false : true,
-      httpOnly: false,
-      // sameSite: process.env.NODE_ENV === "development" ? false : "none",
-    },
-  })
-);
+app.use(session({
+  secret: process.env.SECRET_ID,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    domain: '.vercel.app', // Set the domain to include all subdomains of Vercel
+    secure: true, // Set to true if using HTTPS
+    httpOnly: true, // Set to true for better security
+  },
+}));
 
 app.use(cookieParser());
 app.use(express.json());
