@@ -20,10 +20,11 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      domain: ".vercel.app", // Set the domain to include all subdomains of Vercel
-      // secure: true, // Set to true if using HTTPS
-      // httpOnly: true, // Set to true for better security
-    },
+      domain: '.vercel.app',
+      secure: true, // Enable for HTTPS
+      sameSite: 'None', // Adjust as needed
+      // ...
+    },    
   })
 );
 
