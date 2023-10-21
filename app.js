@@ -42,7 +42,7 @@ app.use(passport.session());
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3000",
+    origin: "https://frontend-btech-burger-5y24.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );

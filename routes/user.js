@@ -20,7 +20,7 @@ router.get(
 router.get(
   "/login",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:3000",
+    successRedirect: "https://frontend-btech-burger-5y24.vercel.app/",
   })
 );
 

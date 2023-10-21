@@ -2,6 +2,7 @@ import ErrorHandler from "../utils/ErrorHandler.js";
 
 export const isAuthenticated = (req, res, next) => {
   console.log("in is Authenicated ");
+  console.log(req.cookies);
   const token = req.cookies["connect.sid"];
   console.log(token);
   if (!token) {
