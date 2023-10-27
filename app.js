@@ -23,10 +23,9 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      // secure: process.env.NODE_ENV === "development" ? false : true,
-      domain: "vercel.app",
-      httpOnly: false,
-      // sameSite: process.env.NODE_ENV === "development" ? false : "none",
+      sameSite: "none",
+      httpOnly: true,
+      secure: true,
     },
   })
 );
